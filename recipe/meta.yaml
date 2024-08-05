@@ -1,16 +1,16 @@
 {% set name = "argocd-cli" %}
-{% set version = "2.11.5" %}
+{% set version = "2.12.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url:  https://github.com/argoproj/argo-cd/archive/v{{ version }}.tar.gz
-  sha256: c446ae287022c06d72716f656b9b0c9248504d5b9c9d89abc8f7020ce50121f6
+  url: https://github.com/argoproj/argo-cd/archive/v{{ version }}.tar.gz
+  sha256: 8fcea6100e9e836293b3939a123e946ca513ffc0e4efe79b572cb4694b574bc6
 
 build:
-  skip: True  # [win]
+  skip: true  # [win]
   number: 0
 
 requirements:
@@ -28,7 +28,7 @@ test:
 about:
   summary: Declarative Continuous Deployment for Kubernetes
   home: https://github.com/argoproj/argo-cd
-  license:  Apache-2.0
+  license: Apache-2.0
   license_file:
     - LICENSE
     - thirdparty/
