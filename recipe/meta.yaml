@@ -1,5 +1,5 @@
 {% set name = "argocd-cli" %}
-{% set version = "2.14.2" %}
+{% set version = "2.14.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/argoproj/argo-cd/archive/v{{ version }}.tar.gz
-  sha256: cbfe5ea83225393ed3e5bde68de2ed972618f3c25500a803bd2ce9ba596d971f
+  sha256: 8ddd1992be2f4c0e1cc4daa101cfba99c35621dca35921d209a725ec9f9c5219
 
 build:
   skip: true  # [win]
