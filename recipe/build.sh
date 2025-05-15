@@ -5,7 +5,7 @@ export GODEBUG="tarinsecurepath=0,zipinsecurepath=0"
 
 echo "PKG_VERSION = ${PKG_VERSION}"
 
-PACKAGE='github.com/argoproj/argo-cd/v2/common'
+PACKAGE='github.com/argoproj/argo-cd/v3/common'
 
 
 go build \
