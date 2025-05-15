@@ -23,7 +23,8 @@ test:
     - ripgrep
   commands:
     - argocd --help
-    - argocd version --client | rg {{ version }}
+    - argocd version --client 
+    - argocd version --client | rg -F '{{ version }}'
 
 about:
   summary: Declarative Continuous Deployment for Kubernetes
