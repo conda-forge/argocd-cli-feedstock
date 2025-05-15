@@ -1,5 +1,5 @@
 {% set name = "argocd-cli" %}
-{% set version = "2.14.11" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/argoproj/argo-cd/archive/v{{ version }}.tar.gz
-  sha256: 54a4cfec38133e6b2808bde2f520fe5647f8e4ab4a477180c098c96256e5ddd7
+  sha256: 56452414337f55a56cbc4840baa9a2c2e5c127af308048552652ac373bcbbdd8
 
 build:
   skip: true  # [win]
@@ -23,7 +23,8 @@ test:
     - ripgrep
   commands:
     - argocd --help
-    - argocd version | rg {{ version }}
+    - argocd version --client 
+    - argocd version --client | rg -F '{{ version }}'
 
 about:
   summary: Declarative Continuous Deployment for Kubernetes
