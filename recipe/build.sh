@@ -16,7 +16,8 @@ go build \
 
 
 # save thirdparty licenses
-go-licenses save ./cmd --save_path ./thirdparty
+# FIXME: unknown license jmespath
+go-licenses save ./cmd --ignore github.com/jmespath/go-jmespath --save_path ./thirdparty
 
 # Clear out cache to avoid file not removable warnings
 chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)
